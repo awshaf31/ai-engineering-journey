@@ -12,7 +12,6 @@ def main() -> None :
         total = total + number
     print ("Total: ",float(total))
     print("Average : ",average(total,5))
+
 if __name__ == "__main__" :
-    main()
-    
-   
+    main() 

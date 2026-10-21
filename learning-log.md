@@ -38,3 +38,19 @@
             `b` holds the number 8, so I can use it in a calculation but `a` holds `None`, and I can't add `1` to `None`
 
             TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+
+- `lesson02/scope_bug.py`
+    1. **Predict:** What prints? Which line fails? What is the error name?
+        - It prints: 110.0
+        - I don't know error name
+    2. Run it. Was your prediction right?
+        - 110.0 <- this is right
+        - The failing this line is `print(tax)`
+        - NameError: name 'tax' is not defined. <- this is wrong.
+    3. **Fix it** so the program prints the price with tax, and prints **no error**. Do **not** move `tax` outside the function. Hint: how do you save the value that `add_tax` returns, so you can print it?
+        - I added this line `result = add_tax(100.0)`
+                            `print(result)`
+        - Removed this line `print(tax)`
+    4. In your log, write 2 sentences: 
+        - This error happened because tax is made inside the function, and I tried to use it outside the function.
+        - I fixed it by using `return` and saving the value in `result`.

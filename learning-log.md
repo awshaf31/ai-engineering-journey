@@ -99,3 +99,11 @@
 4. In `def total_cost(price, quantity)`, `price` and `quantity` are parameters. In `total_cost(2.5, 4)`, `2.5` and `4` are arguments.
 5. `range(1, 6)` gives 1, 2, 3, 4, 5. It stops before the last number, so sum_to needs n + 1 because it must include n.
 6. When an `assert` is true, nothing happens and program keeps going. When it is false, `AssertionError`.
+
+## 2026-10-24 — Week 0 summary
+
+### The hardest part
+The hardest part was the `sum_to(3)` table. At first I wrote `0, 1, 2` in the `total` column, but the correct line is `total = total + i`, which keeps the old `total` and adds the current `i`.
+
+### Two-minute explanation
+This week I learned that a function can give a value back with `return`. `print()` only shows text on the screen, so a function with `print()` and no `return` gives back `None`. A variable like `tax` exists only inside `add_tax`, so I use `return` and save the value in `result`. In `sum_to`, a loop adds `i` to `total` on each pass and returns `total` at the end. In `count_even`, I use `i % 2 == 0` to find even numbers and add `1` to `count` each time. I built `shopping_total.py`, which asks for 3 items and prints the grand total.

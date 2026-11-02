@@ -107,3 +107,17 @@ The hardest part was the `sum_to(3)` table. At first I wrote `0, 1, 2` in the `t
 
 ### Two-minute explanation
 This week I learned that a function can give a value back with `return`. `print()` only shows text on the screen, so a function with `print()` and no `return` gives back `None`. A variable like `tax` exists only inside `add_tax`, so I use `return` and save the value in `result`. In `sum_to`, a loop adds `i` to `total` on each pass and returns `total` at the end. In `count_even`, I use `i % 2 == 0` to find even numbers and add `1` to `count` each time. I built `shopping_total.py`, which asks for 3 items and prints the grand total.
+
+## 2026-11-02 — Week 1
+- `cs50p/ps2/plates.py`
+    1. In `is_valid`, what does `if not (2 <= len(s) <= 6)` check? Why does it `return False`?
+        - `is_valid` checks length of plate(input).
+        - if length shorter than 2 or greater than 6 that return False
+        - The first rule fails, so function return `False` and stops.
+    2. Look at the loop that finds the first digit. Why does the code `return False` when the first digit is `'0'`?
+        - plate is not allowed if that break this rule :The first number used cannot be a `0`
+    3. What does the inner loop `for j in range(i, len(s))` check? Why is there a `break` after it?
+        - if once number start, that check No letter can appear afterward. if appear letter return False
+        - break stops the outer loop, so that the code does not keep going to the next digits, like the 0 in CS50, and wrongly return False.
+    4. At the bottom of `plates.py` you call `main()` directly. In `nutrition.py` you wrote `if __name__ == "__main__":` before `main()`. What is the difference? What could go wrong if another file imported `plates.py`?
+    - the test files does `from plates import is_valid`.This runs plates.py top to bottom. Without the `if __name__ == "__main__"` line , `main()` would also run and program would print or wait for input during the test

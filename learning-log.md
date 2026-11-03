@@ -148,4 +148,11 @@ This week I learned that a function can give a value back with `return`. `print(
             2. Why does `not a number` print **before** `42`?
                 - The calls happen when I assign `a` and `b`. The `except` block printed `not a number` then. After that, print(a) showed 42.
             3. Why does `done` never print?
-                - before `print("done")` have an error s program stops.
+                - `print(10/0)`risese an error before `print("done")` ,so program stops.
+
+    - `lesson03/safe_functions.py` 
+        1. Why does safe_int("3.5") return None? Which exception happens inside the function?
+            - int() on text accepts only whole-number text,so "3.5" raises ValueError.
+        2. What would happen to first_item([]) if you removed the try and except? What is the error name?
+            - [] has no index 0, so item[0] raises IndexError and the program stops with a traceback.
+        - AI used : no

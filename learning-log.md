@@ -108,7 +108,8 @@ The hardest part was the `sum_to(3)` table. At first I wrote `0, 1, 2` in the `t
 ### Two-minute explanation
 This week I learned that a function can give a value back with `return`. `print()` only shows text on the screen, so a function with `print()` and no `return` gives back `None`. A variable like `tax` exists only inside `add_tax`, so I use `return` and save the value in `result`. In `sum_to`, a loop adds `i` to `total` on each pass and returns `total` at the end. In `count_even`, I use `i % 2 == 0` to find even numbers and add `1` to `count` each time. I built `shopping_total.py`, which asks for 3 items and prints the grand total.
 
-## 2026-11-02 — Week 1
+## 2026-11-02 — lesson03
+
 - `cs50p/ps2/plates.py`
     1. In `is_valid`, what does `if not (2 <= len(s) <= 6)` check? Why does it `return False`?
         - `is_valid` checks length of plate(input).
@@ -121,3 +122,30 @@ This week I learned that a function can give a value back with `return`. `print(
         - break stops the outer loop, so that the code does not keep going to the next digits, like the 0 in CS50, and wrongly return False.
     4. At the bottom of `plates.py` you call `main()` directly. In `nutrition.py` you wrote `if __name__ == "__main__":` before `main()`. What is the difference? What could go wrong if another file imported `plates.py`?
     - the test files does `from plates import is_valid`.This runs plates.py top to bottom. Without the `if __name__ == "__main__"` line , `main()` would also run and program would print or wait for input during the test
+
+    ## 2026-11-03 — lesson03
+
+   - `lesson03/predict_errors.py`
+        - **Your guess must answer:**
+            1. Which lines print, and in which order?
+                - `print(a)`: print correctly 42
+                - `to_number` return `-1`, and `print(b)` show it. 
+
+            2. Which line stops the program? What is the error name?
+                - `print(10 / 0)` that ZeroDivisionError So program throw error and stops.
+            3. Does `done` print? Why or why not?
+                - No
+                - before line error So program stops. 
+
+        - **Questions to answer in your log (your own words):**
+            1. Was your guess right?
+                - No
+                - real output order:
+                    - not a number
+                    - 42
+                    - -1
+                    - ZeroDivisionError
+            2. Why does `not a number` print **before** `42`?
+                - The calls happen when I assign `a` and `b`. The `except` block printed `not a number` then. After that, print(a) showed 42.
+            3. Why does `done` never print?
+                - before `print("done")` have an error s program stops.

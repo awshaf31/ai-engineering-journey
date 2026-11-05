@@ -168,3 +168,12 @@ This week I learned that a function can give a value back with `return`. `print(
     3. Why is 1 right in count_above (counter += 1), but n was right in sum_list (total += n)?
         - In count_above (counter += 1) that's add 1 because counting increase but in sum_list (total += n) add n because we are adding up all numbers.
     - AI used: no
+
+## 2026-11-05 — lesson03
+- `lesson03/dict_practice.py`
+    1. What can a dictionary do that a list cannot?
+        - store data as key and value pairs, so I can look up a value by it's key, without loop
+    2. What is the difference between checking a price and checking a key?
+        - “Checking a key asks whether the item exists in the dictionary. Checking a price asks whether the price is zero (or empty), and it does not tell me if the item exists. (with help)”
+    3. get_price has no loop because a dictionary can find a value directly from it's key, so I do not need to check every item.
+    4. AI used: no

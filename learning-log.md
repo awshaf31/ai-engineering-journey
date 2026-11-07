@@ -177,3 +177,10 @@ This week I learned that a function can give a value back with `return`. `print(
         - “Checking a key asks whether the item exists in the dictionary. Checking a price asks whether the price is zero (or empty), and it does not tell me if the item exists. (with help)”
     3. get_price has no loop because a dictionary can find a value directly from it's key, so I do not need to check every item.
     4. AI used: no
+
+## 2026-11-07 — lesson03
+- `lesson03/test_practice.py` and `cs50p/ps2/test_plates.py`
+
+    1. AI used:no 
+    2. For an invalid input, the assert must check that the function returns False.
+    3. A green result only counts if every test has an assert or pytest.raises, and pytest does not warn about duplicate test names.

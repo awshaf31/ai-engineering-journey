@@ -184,3 +184,14 @@ This week I learned that a function can give a value back with `return`. `print(
     1. AI used:no 
     2. For an invalid input, the assert must check that the function returns False.
     3. A green result only counts if every test has an assert or pytest.raises, and pytest does not warn about duplicate test names.
+
+## 2026-11-08 — lesson03
+- `lesson03/test_practice.py`
+    - Break the test on purpose
+
+        - pytest showed me that the test `test_safe_int_valid_positive` failed, because the real value was 42 and I expected 43.
+         - I fixed it by changing the expected value to 42 in the test, because the function was correct and my test was wrong.
+
+    - pytest shows the real value and the expected value, so I can see which side is wrong.
+
+    - AI used: no

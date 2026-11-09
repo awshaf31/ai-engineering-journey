@@ -195,3 +195,12 @@ This week I learned that a function can give a value back with `return`. `print(
     - pytest shows the real value and the expected value, so I can see which side is wrong.
 
     - AI used: no
+
+## 2026-11-09 — lesson03
+- `lesson03/average_scores.py` and `lesson03/test_average_scores.py`
+    1. Which failure in parse_score needs try/except, and which needs if?
+        - Text that is not a number, like abc, needs try/except, because float("abc") gives ValueError.
+        - A number outside 0 to 100, like 150, needs if, because float("150") returns 150.0 with no error, so there is no error to catch. I must check the range myself.
+    2. AI used: no
+    3. What error does average([]) give?
+        - `average([])` gives ValueError, because my code raises it on purpose when the list is empty.

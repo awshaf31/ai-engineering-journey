@@ -157,7 +157,7 @@ This week I learned that a function can give a value back with `return`. `print(
             - [] has no index 0, so item[0] raises IndexError and the program stops with a traceback.
         - AI used : no
 
- ## 2026-11-04 — lesson03
+## 2026-11-04 — lesson03
 - `lesson03/list_practice.py`
     1. What do 7 % 2 and 8 % 2 give?
         - 7 % 2 = 1
@@ -204,3 +204,34 @@ This week I learned that a function can give a value back with `return`. `print(
     2. AI used: no
     3. What error does average([]) give?
         - `average([])` gives ValueError, because my code raises it on purpose when the list is empty.
+
+    ### Knowledge check
+
+    1. What is an exception? Give two error names you have seen, and say what causes each one.
+        - An exception is a problem that arises while the program runs. Something went wrong in the code.
+        - ValueError : The type is right, but the value is wrong.
+            - Example : `int("abc")`
+        - ZeroDivisionError: divide by zero
+            - Example : `result = 10 / 0`
+
+    2. What does `try` / `except ValueError` do? Why is a bare `except:` a bad idea?
+        - `try` runs the code; if no error occurs, the program continues, but if a ValueError happens, the `except ValueError` block runs code instead. A ValueError handler catches only that specific error, so other unexpected errors will still stop the program.
+        - bare `except:` hides every error, even typing mistakes.
+
+    3. A function has `return int(text)` inside `try` and `return None` inside `except ValueError`. What does `safe_int("abc")` give back? Why does the program not crash?
+        - `safe_int("abc")` returns `None`. The program does not crash because the `except ValueError` block catches and handles the error before it can terminate the program.
+
+    4. What is the difference between a list and a dictionary? Give one example of each from this lesson.
+        - A dictionary stores data as key and value pairs, whereas a list stores multiple items together in a single variable.
+            - list example: `numbers = [3, 8, 5]`
+            - dictionary example: `prices = {"apple": 2.5, "pear": 3.0}`
+
+    5. What does `if __name__ == "__main__":` do? Why does a test file need it?
+        - `__name__` is `"__main__"` only when I run the file directly. When another file imports it, the code under the `if` does not run.
+        - The test file does `from plates import is_valid`. Without the guard, Python would read and run `plates.py` top to bottom, meaning `main()` would also run, and the program would wait for input during the test.
+
+    6. What is the difference between an `assert` line in `main()` and a pytest test? What does `pytest.raises(ValueError)` check?
+        - In `main()`, an `assert` stops the file at the first failure, so I only see one error at a time. With pytest, I see a full report of all passing and failing tests together.
+        - In my test `test_largest_empty_list_raises`, `pytest.raises(ValueError)` checks that `largest([])` raises a ValueError. If it does not raise, the test fails.
+
+    - no AI, hints from Claude

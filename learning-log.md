@@ -303,3 +303,8 @@ I used a `for` loop that replaced the `item` I was looking for with each key in 
 
 ### 5. AI use
 No AI. Hints from Claude, plus a worked example for `get_price` and for the shape of `main` in `average_scores.py`.
+
+## 2026-11-11 — Problem Set 3: `cs50p/ps3/fuel.py`
+- check50: 15/15 passed
+- Hardest part: The hardest part of fuel.py was comparing percentages as text. My first version checked things like `"100%" < "99%"`, so it gave the wrong output because strings compare alphabetically. I fixed it by changing the calculation to a number and comparing integers instead. (with help: Claude listed the bugs, and I fixed them)
+- AI used: no, hints from Claude 

@@ -1,70 +1,92 @@
 # Learning Log
 
-## 2026-10-14 — Lesson 01
-- What I did:
-    - I understand the terminal commands
-    - Installed Homebrew and tools
-    - I connected my GitHub account and created a public repository.
-    - Setup project folder and virtual environments.
-    - then created .gitignore file
-    - Wrote my first python program
-    - Understand how to call function , print ,input ,docstring , run main() also
-    - my first commit for this lesson
-    - Added second function
-    - I created a README file
-- What was difficult: Syntax errors , Second function Writing my self with first function
-- How I fixed it: Reading the error then understanding it and fixed ,again and again try and rewrite that second function
-- What I learned: I learned print ,input ,function,return ,f string
+AI Engineering Journey — Awshaf Ahmath. One entry per study day. `(with help)` marks an answer where Claude gave the idea or the wording.
 
-## Study hours calculator (study_hours.py)
-- What it does: This program asks the user for hours on 5 days. Then it calculates the total and average.
-- How I tested it: I entered 1, 2, 3, 4, 5. The output was Total: 15.0 and Average: 3.0.
-- What was difficult: The hardest part was that total was not updated inside main(), and Python showed a ValueError.
-- How I fixed it: I moved total = 0 inside main().
-- Error from the bonus question: When I typed "eight", Python showed eight (ValueError: could not convert string to float: 'eight').
-- What I learned: A variable created inside a function only exists inside that function. I also learned how to use float() and for loops.
+## Index
+
+| Date | Lesson | Topic |
+|---|---|---|
+| 2026-10-14 | Lesson 01 | Setup, first program, study hours calculator |
+| 2026-10-21 | Lesson 02 | `return` vs `print`, scope |
+| 2026-10-23 | Lesson 02 | `shopping_total.py`, `sum_to(3)` trace |
+| 2026-10-24 | Lesson 02 | Functions, loops, knowledge check, Week 0 summary |
+| 2026-11-02 | Lesson 03 | Task 0: `plates.py` |
+| 2026-11-03 | Lesson 03 | Tasks 1 and 2: exceptions, safe functions |
+| 2026-11-04 | Lesson 03 | Task 3: lists |
+| 2026-11-05 | Lesson 03 | Task 4: dictionaries |
+| 2026-11-07 | Lesson 03 | Task 5: pytest |
+| 2026-11-08 | Lesson 03 | Task 5c: break a test on purpose |
+| 2026-11-09 | Lesson 03 | Independent challenge, knowledge check |
+| 2026-11-11 | Lesson 03 | Report |
+
+---
+
+## 2026-10-14 — Lesson 01
+
+### What I did
+- I understand the terminal commands.
+- Installed Homebrew and tools.
+- I connected my GitHub account and created a public repository.
+- Set up the project folder and virtual environment.
+- Created the `.gitignore` file.
+- Wrote my first Python program.
+- Understand how to call a function, `print`, `input`, docstring, and run `main()`.
+- Made my first commit for this lesson.
+- Added a second function.
+- Created a README file.
+
+### Reflection
+- **What was difficult:** Syntax errors, and writing the second function myself after the first function.
+- **How I fixed it:** Reading the error, understanding it and fixing it. I tried again and again and rewrote the second function.
+- **What I learned:** `print`, `input`, functions, `return`, f-strings.
+
+### Study hours calculator (`study_hours.py`)
+- **What it does:** Asks the user for hours on 5 days, then calculates the total and average.
+- **How I tested it:** I entered 1, 2, 3, 4, 5. The output was `Total: 15.0` and `Average: 3.0`.
+- **What was difficult:** `total` was not updated inside `main()`, and Python showed a `ValueError`.
+- **How I fixed it:** I moved `total = 0` inside `main()`.
+- **Bonus error:** When I typed "eight", Python showed `ValueError: could not convert string to float: 'eight'`.
+- **What I learned:** A variable created inside a function exists only inside that function. I also learned `float()` and `for` loops.
+
+---
 
 ## 2026-10-21 — Lesson 02
-- lesson02/predict.py.
-    - My guess both are same result : 8 and 8
-    - **Questions to answer in your log (your own words):**
-        1. Which lines printed what? Was your guess right? wrong
-            Output : `8`
-                     `None` <- this is I missed to predict
-                     `8`
-        2. Why does `print(a)` show `None`?
-            `double_print()` show `8` on screen because of the `print()` inside it. It has no return, so it gives back `None`. That is why `print(a)` shows `None`  
-        3. Why can you do `b + 1` but not `a + 1`?
-            `b` holds the number 8, so I can use it in a calculation but `a` holds `None`, and I can't add `1` to `None`
 
-            TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+### `lesson02/predict.py`
+- **My guess:** both are the same result: `8` and `8`.
 
-- `lesson02/scope_bug.py`
-    1. **Predict:** What prints? Which line fails? What is the error name?
-        - It prints: 110.0
-        - I don't know error name
-    2. Run it. Was your prediction right?
-        - 110.0 <- this is right
-        - The failing line is `print(tax)`
-        - NameError: name 'tax' is not defined. <- I did not know the error name.
-    3. **Fix it** so the program prints the price with tax, and prints **no error**. Do **not** move `tax` outside the function. Hint: how do you save the value that `add_tax` returns, so you can print it?
-        - I added this line `result = add_tax(100.0)`
-                            `print(result)`
-        - Removed this line `print(tax)`
-    4. In your log, write 2 sentences: 
-        - This error happened because tax is made inside the function, and I tried to use it outside the function.
-        - I fixed it by using `return` and saving the value in `result`.
+1. **Which lines printed what? Was your guess right?** Wrong.
+   - Output: `8`, then `None` (I missed this one), then `8`.
+2. **Why does `print(a)` show `None`?**
+   - `double_print()` shows `8` on screen because of the `print()` inside it. It has no `return`, so it gives back `None`. That is why `print(a)` shows `None`.
+3. **Why can you do `b + 1` but not `a + 1`?**
+   - `b` holds the number 8, so I can use it in a calculation. `a` holds `None`, and I can't add `1` to `None`.
+   - `TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'`
+
+### `lesson02/scope_bug.py`
+1. **Predict: what prints, which line fails, what is the error name?**
+   - It prints `110.0`.
+   - I did not know the error name.
+2. **Run it. Was your prediction right?**
+   - `110.0` was right.
+   - The failing line is `print(tax)`.
+   - `NameError: name 'tax' is not defined` (I did not know the error name).
+3. **Fix:** I added `result = add_tax(100.0)` and `print(result)`, and removed `print(tax)`.
+4. **Two sentences:**
+   - This error happened because `tax` is made inside the function, and I tried to use it outside the function.
+   - I fixed it by using `return` and saving the value in `result`.
+
+---
 
 ## 2026-10-23 — Lesson 02
 
-- `lesson02/shopping_total.py`
-    - What happens if you type `abc` for a price? Write the error name in your log
-        - ValueError: could not convert string to float: 'abc'  
+### `lesson02/shopping_total.py`
+- **What happens if you type `abc` for a price?** `ValueError: could not convert string to float: 'abc'`
 
-### sum_to(3) trace
-`sum_to` is in `lesson02/loops_practice.py`. I traced it with n = 3.
+### `sum_to(3)` trace
+`sum_to` is in `lesson02/loops_practice.py`. I traced it with `n = 3`.
 
-| Moment | i | total |
+| Moment | `i` | `total` |
 |---|---|---|
 | Before the loop | none | 0 |
 | 1st pass | 1 | 1 |
@@ -73,170 +95,183 @@
 
 - `total` starts at 0.
 - `range(1, 3 + 1)` gives 1, 2, 3.
-- In the 1st pass, i is 1, total becomes 1.
-- In the 2nd pass, i is 2, total becomes 3.
-- In the 3rd pass, i is 3, total becomes 6.
-- At the end, `return` gives back total = 6.
-- I tested a wrong version. It used + 1, so it counted the passes. I fixed it with + i.
-- I predicted sum_to(4) = 10 before running. I was right.
+- In the 1st pass, `i` is 1 and `total` becomes 1.
+- In the 2nd pass, `i` is 2 and `total` becomes 3.
+- In the 3rd pass, `i` is 3 and `total` becomes 6.
+- At the end, `return` gives back `total = 6`.
+- I tested a wrong version. It used `+ 1`, so it counted the passes. I fixed it with `+ i`.
+- I predicted `sum_to(4) = 10` before running. I was right.
+
+---
 
 ## 2026-10-24 — Lesson 02
 
-### Task 2: functions_practice.py
-- Hardest function: discount_price, because I had to find the logic and then convert it to code.
+### Task 2: `functions_practice.py`
+- **Hardest function:** `discount_price`, because I had to find the logic and then convert it to code.
 - `%` gives the remainder. `7 % 2` is 1 and `8 % 2` is 0, so a number is even when the remainder is 0.
-- When an `assert` failed, Python showed AssertionError. I fixed the function, not the check.
+- When an `assert` failed, Python showed `AssertionError`. I fixed the function, not the check.
 
-### Task 4: loops_practice.py
+### Task 4: `loops_practice.py`
 - `i == 0 % 2` was wrong because `0 % 2` is 0, so the `if` asked `i == 0`. `i` starts at 1, so it never passed, `count` stayed 0, and `assert count_even(10) == 5` failed.
 - `count = count + i` was wrong because it added the number itself, but I wanted to add 1.
 - The line `count_even(10) == 5` without `assert` did nothing, because Python worked out the result and then threw it away.
 
 ### Knowledge check
-1. `print()` is the wrong choice inside `total_cost` because it hands back `None`. In `main()`, the line `grand_total + total_cost(price, quantity)` then `TypeError`, because it tries to add a number and `None`
-2. A function with no `return` gives back `None`
+1. `print()` is the wrong choice inside `total_cost` because it hands back `None`. In `main()`, the line `grand_total + total_cost(price, quantity)` then raises `TypeError`, because it tries to add a number and `None`.
+2. A function with no `return` gives back `None`.
 3. `print(tax)` fails outside `add_tax` because `tax` exists only inside `add_tax`. I get the value out with `return`.
 4. In `def total_cost(price, quantity)`, `price` and `quantity` are parameters. In `total_cost(2.5, 4)`, `2.5` and `4` are arguments.
-5. `range(1, 6)` gives 1, 2, 3, 4, 5. It stops before the last number, so sum_to needs n + 1 because it must include n.
-6. When an `assert` is true, nothing happens and program keeps going. When it is false, `AssertionError`.
+5. `range(1, 6)` gives 1, 2, 3, 4, 5. It stops before the last number, so `sum_to` needs `n + 1` because it must include `n`.
+6. When an `assert` is true, nothing happens and the program keeps going. When it is false, Python raises `AssertionError`.
 
-## 2026-10-24 — Week 0 summary
+### Week 0 summary
 
-### The hardest part
-The hardest part was the `sum_to(3)` table. At first I wrote `0, 1, 2` in the `total` column, but the correct line is `total = total + i`, which keeps the old `total` and adds the current `i`.
+**The hardest part.** The `sum_to(3)` table. At first I wrote `0, 1, 2` in the `total` column, but the correct line is `total = total + i`, which keeps the old `total` and adds the current `i`.
 
-### Two-minute explanation
-This week I learned that a function can give a value back with `return`. `print()` only shows text on the screen, so a function with `print()` and no `return` gives back `None`. A variable like `tax` exists only inside `add_tax`, so I use `return` and save the value in `result`. In `sum_to`, a loop adds `i` to `total` on each pass and returns `total` at the end. In `count_even`, I use `i % 2 == 0` to find even numbers and add `1` to `count` each time. I built `shopping_total.py`, which asks for 3 items and prints the grand total.
+**Two-minute explanation.** This week I learned that a function can give a value back with `return`. `print()` only shows text on the screen, so a function with `print()` and no `return` gives back `None`. A variable like `tax` exists only inside `add_tax`, so I use `return` and save the value in `result`. In `sum_to`, a loop adds `i` to `total` on each pass and returns `total` at the end. In `count_even`, I use `i % 2 == 0` to find even numbers and add `1` to `count` each time. I built `shopping_total.py`, which asks for 3 items and prints the grand total.
 
-## 2026-11-02 — lesson03
+---
 
-- `cs50p/ps2/plates.py`
-    1. In `is_valid`, what does `if not (2 <= len(s) <= 6)` check? Why does it `return False`?
-        - `is_valid` checks length of plate(input).
-        - if length shorter than 2 or greater than 6 that return False
-        - The first rule fails, so function return `False` and stops.
-    2. Look at the loop that finds the first digit. Why does the code `return False` when the first digit is `'0'`?
-        - plate is not allowed if that break this rule :The first number used cannot be a `0`
-    3. What does the inner loop `for j in range(i, len(s))` check? Why is there a `break` after it?
-        - if once number start, that check No letter can appear afterward. if appear letter return False
-        - break stops the outer loop, so that the code does not keep going to the next digits, like the 0 in CS50, and wrongly return False.
-    4. At the bottom of `plates.py` you call `main()` directly. In `nutrition.py` you wrote `if __name__ == "__main__":` before `main()`. What is the difference? What could go wrong if another file imported `plates.py`?
-    - the test files does `from plates import is_valid`.This runs plates.py top to bottom. Without the `if __name__ == "__main__"` line , `main()` would also run and program would print or wait for input during the test
+## 2026-11-02 — Lesson 03, Task 0: `cs50p/ps2/plates.py`
 
-    ## 2026-11-03 — lesson03
+1. **In `is_valid`, what does `if not (2 <= len(s) <= 6)` check? Why does it `return False`?**
+   - `is_valid` checks the length of the plate (input).
+   - If the length is shorter than 2 or greater than 6, it returns `False`.
+   - The first rule fails, so the function returns `False` and stops.
+2. **Why does the code `return False` when the first digit is `'0'`?**
+   - A plate is not allowed if it breaks this rule: the first number used cannot be a `0`.
+3. **What does the inner loop `for j in range(i, len(s))` check? Why is there a `break`?**
+   - Once a number starts, no letter can appear afterward. If a letter appears, it returns `False`.
+   - `break` stops the outer loop, so the code does not keep going to the next digits, like the `0` in `CS50`, and wrongly return `False`. (with help)
+4. **`main()` called directly vs `if __name__ == "__main__":`. What could go wrong on import?**
+   - The test file does `from plates import is_valid`. This runs `plates.py` top to bottom. Without the `if __name__ == "__main__"` line, `main()` would also run and the program would print or wait for input during the test.
 
-   - `lesson03/predict_errors.py`
-        - **Your guess must answer:**
-            1. Which lines print, and in which order?
-                - `print(a)`: print correctly 42
-                - `to_number` return `-1`, and `print(b)` show it. 
+**AI used:** yes. I used AI for hints on `nutrition.py`, and the loops in `plates.py` came from AI (told Claude on 2 Nov).
 
-            2. Which line stops the program? What is the error name?
-                - `print(10 / 0)` that ZeroDivisionError So program throw error and stops.
-            3. Does `done` print? Why or why not?
-                - No
-                - before line error So program stops. 
+---
 
-        - **Questions to answer in your log (your own words):**
-            1. Was your guess right?
-                - No
-                - real output order:
-                    - not a number
-                    - 42
-                    - -1
-                    - ZeroDivisionError
-            2. Why does `not a number` print **before** `42`?
-                - The calls happen when I assign `a` and `b`. The `except` block printed `not a number` then. After that, print(a) showed 42.
-            3. Why does `done` never print?
-                - `print(10/0)`risese an error before `print("done")` ,so program stops.
+## 2026-11-03 — Lesson 03, Tasks 1 and 2
 
-    - `lesson03/safe_functions.py` 
-        1. Why does safe_int("3.5") return None? Which exception happens inside the function?
-            - int() on text accepts only whole-number text,so "3.5" raises ValueError.
-        2. What would happen to first_item([]) if you removed the try and except? What is the error name?
-            - [] has no index 0, so item[0] raises IndexError and the program stops with a traceback.
-        - AI used : no
+### `lesson03/predict_errors.py`
 
-## 2026-11-04 — lesson03
-- `lesson03/list_practice.py`
-    1. What do 7 % 2 and 8 % 2 give?
-        - 7 % 2 = 1
-        - 8 % 2 = 0
-        - If the remainder after dividing by 2 is 0, the number is even
-    2. What does list.append return, and why did result = result.append(n) break?
-        - append return None, and the line result = result.append(n) then stores that None in result. On the next loop turn, result is None, and None has no .append, so python raises AttributeError.
-    3. Why is 1 right in count_above (counter += 1), but n was right in sum_list (total += n)?
-        - In count_above (counter += 1) that's add 1 because counting increase but in sum_list (total += n) add n because we are adding up all numbers.
-    - AI used: no
+**My guess**
+1. **Which lines print, and in which order?**
+   - `print(a)` prints `42`.
+   - `to_number` returns `-1`, and `print(b)` shows it.
+2. **Which line stops the program? What is the error name?**
+   - `print(10 / 0)` raises `ZeroDivisionError`, so the program stops.
+3. **Does `done` print? Why or why not?**
+   - No. An error happens before it, so the program stops.
 
-## 2026-11-05 — lesson03
-- `lesson03/dict_practice.py`
-    1. What can a dictionary do that a list cannot?
-        - store data as key and value pairs, so I can look up a value by it's key, without loop
-    2. What is the difference between checking a price and checking a key?
-        - “Checking a key asks whether the item exists in the dictionary. Checking a price asks whether the price is zero (or empty), and it does not tell me if the item exists. (with help)”
-    3. get_price has no loop because a dictionary can find a value directly from it's key, so I do not need to check every item.
-    4. AI used: no
+**After running**
+1. **Was my guess right?** No. The real output order:
+   - `not a number`
+   - `42`
+   - `-1`
+   - `ZeroDivisionError`
+2. **Why does `not a number` print before `42`?**
+   - The calls happen when I assign `a` and `b`. The `except` block printed `not a number` then. After that, `print(a)` showed `42`. (with help)
+3. **Why does `done` never print?**
+   - `print(10 / 0)` raises an error before `print("done")`, so the program stops.
 
-## 2026-11-07 — lesson03
-- `lesson03/test_practice.py` and `cs50p/ps2/test_plates.py`
+### `lesson03/safe_functions.py`
+1. **Why does `safe_int("3.5")` return `None`? Which exception happens inside the function?**
+   - `int()` on text accepts only whole-number text, so `"3.5"` raises `ValueError`. (with help)
+2. **What would happen to `first_item([])` without `try` and `except`? What is the error name?**
+   - `[]` has no index 0, so `items[0]` raises `IndexError` and the program stops with a traceback. (with help)
 
-    1. AI used:no 
-    2. For an invalid input, the assert must check that the function returns False.
-    3. A green result only counts if every test has an assert or pytest.raises, and pytest does not warn about duplicate test names.
+**AI used:** no
 
-## 2026-11-08 — lesson03
-- `lesson03/test_practice.py`
-    - Break the test on purpose
+---
 
-        - pytest showed me that the test `test_safe_int_valid_positive` failed, because the real value was 42 and I expected 43.
-         - I fixed it by changing the expected value to 42 in the test, because the function was correct and my test was wrong.
+## 2026-11-04 — Lesson 03, Task 3: `lesson03/list_practice.py`
 
-    - pytest shows the real value and the expected value, so I can see which side is wrong.
+1. **What do `7 % 2` and `8 % 2` give?**
+   - `7 % 2 = 1`
+   - `8 % 2 = 0`
+   - If the remainder after dividing by 2 is 0, the number is even.
+2. **What does `list.append` return, and why did `result = result.append(n)` break?**
+   - `append` returns `None`, and the line `result = result.append(n)` then stores that `None` in `result`. On the next loop turn, `result` is `None`, and `None` has no `.append`, so Python raises `AttributeError`. (with help)
+3. **Why is `1` right in `count_above` (`counter += 1`), but `n` was right in `sum_list` (`total += n`)?**
+   - In `count_above`, `counter += 1` adds 1 because I am counting. In `sum_list`, `total += n` adds `n` because I am adding up all the numbers.
 
-    - AI used: no
+**AI used:** no
 
-## 2026-11-09 — lesson03
-- `lesson03/average_scores.py` and `lesson03/test_average_scores.py`
-    1. Which failure in parse_score needs try/except, and which needs if?
-        - Text that is not a number, like abc, needs try/except, because float("abc") gives ValueError.
-        - A number outside 0 to 100, like 150, needs if, because float("150") returns 150.0 with no error, so there is no error to catch. I must check the range myself.
-    2. AI used: no
-    3. What error does average([]) give?
-        - `average([])` gives ValueError, because my code raises it on purpose when the list is empty.
+---
 
-    ### Knowledge check
+## 2026-11-05 — Lesson 03, Task 4: `lesson03/dict_practice.py`
 
-    1. What is an exception? Give two error names you have seen, and say what causes each one.
-        - An exception is a problem that arises while the program runs. Something went wrong in the code.
-        - ValueError : The type is right, but the value is wrong.
-            - Example : `int("abc")`
-        - ZeroDivisionError: divide by zero
-            - Example : `result = 10 / 0`
+1. **What can a dictionary do that a list cannot?**
+   - It stores data as key and value pairs, so I can look up a value by its key, without a loop.
+2. **What is the difference between checking a price and checking a key?**
+   - Checking a key asks whether the item exists in the dictionary. Checking a price asks whether the price is zero (or empty), and it does not tell me if the item exists. (with help)
+3. **`get_price` has no loop because...**
+   - A dictionary can find a value directly from its key, so I do not need to check every item. (with help)
 
-    2. What does `try` / `except ValueError` do? Why is a bare `except:` a bad idea?
-        - `try` runs the code; if no error occurs, the program continues, but if a ValueError happens, the `except ValueError` block runs code instead. A ValueError handler catches only that specific error, so other unexpected errors will still stop the program.
-        - bare `except:` hides every error, even typing mistakes.
+**AI used:** no (hints from Claude)
 
-    3. A function has `return int(text)` inside `try` and `return None` inside `except ValueError`. What does `safe_int("abc")` give back? Why does the program not crash?
-        - `safe_int("abc")` returns `None`. The program does not crash because the `except ValueError` block catches and handles the error before it can terminate the program.
+---
 
-    4. What is the difference between a list and a dictionary? Give one example of each from this lesson.
-        - A dictionary stores data as key and value pairs, whereas a list stores multiple items together in a single variable.
-            - list example: `numbers = [3, 8, 5]`
-            - dictionary example: `prices = {"apple": 2.5, "pear": 3.0}`
+## 2026-11-07 — Lesson 03, Task 5: pytest
 
-    5. What does `if __name__ == "__main__":` do? Why does a test file need it?
-        - `__name__` is `"__main__"` only when I run the file directly. When another file imports it, the code under the `if` does not run.
-        - The test file does `from plates import is_valid`. Without the guard, Python would read and run `plates.py` top to bottom, meaning `main()` would also run, and the program would wait for input during the test.
+Files: `lesson03/test_practice.py` and `cs50p/ps2/test_plates.py`
 
-    6. What is the difference between an `assert` line in `main()` and a pytest test? What does `pytest.raises(ValueError)` check?
-        - In `main()`, an `assert` stops the file at the first failure, so I only see one error at a time. With pytest, I see a full report of all passing and failing tests together.
-        - In my test `test_largest_empty_list_raises`, `pytest.raises(ValueError)` checks that `largest([])` raises a ValueError. If it does not raise, the test fails.
+1. For an invalid input, the assert must check that the function returns `False`. (with help)
+2. A green result only counts if every test has an `assert` or `pytest.raises`, and pytest does not warn about duplicate test names. (with help)
 
-    - no AI, hints from Claude
+**AI used:** no
 
-## 2026-11-11 — lesson03
+---
+
+## 2026-11-08 — Lesson 03, Task 5c: break a test on purpose
+
+File: `lesson03/test_practice.py`
+
+- pytest showed me that the test `test_safe_int_valid_positive` failed, because the real value was 42 and I expected 43.
+- I fixed it by changing the expected value to 42 in the test, because the function was correct and my test was wrong.
+- pytest shows the real value and the expected value, so I can see which side is wrong. (with help)
+
+**AI used:** no
+
+---
+
+## 2026-11-09 — Lesson 03, independent challenge and knowledge check
+
+### `lesson03/average_scores.py` and `lesson03/test_average_scores.py`
+1. **Which failure in `parse_score` needs `try`/`except`, and which needs `if`?**
+   - Text that is not a number, like `abc`, needs `try`/`except`, because `float("abc")` gives `ValueError`.
+   - A number outside 0 to 100, like `150`, needs `if`, because `float("150")` returns `150.0` with no error, so there is no error to catch. I must check the range myself.
+2. **What error does `average([])` give?**
+   - `ValueError`, because my code raises it on purpose when the list is empty.
+
+**AI used:** no
+
+### Knowledge check
+1. **What is an exception? Give two error names you have seen, and say what causes each one.**
+   - An exception is a problem that arises while the program runs. Something went wrong in the code.
+   - `ValueError`: the type is right, but the value is wrong. Example: `int("abc")`.
+   - `ZeroDivisionError`: divide by zero. Example: `result = 10 / 0`.
+2. **What does `try` / `except ValueError` do? Why is a bare `except:` a bad idea?**
+   - `try` runs the code. If no error occurs, the program continues. If a `ValueError` happens, the `except ValueError` block runs its code instead. It catches only that specific error, so other unexpected errors will still stop the program. (with help)
+   - A bare `except:` hides every error, even typing mistakes.
+3. **What does `safe_int("abc")` give back? Why does the program not crash?**
+   - It returns `None`. The program does not crash because the `except ValueError` block catches and handles the error before it can terminate the program.
+4. **What is the difference between a list and a dictionary?**
+   - A dictionary stores data as key and value pairs, whereas a list stores multiple items together in a single variable.
+   - List example: `numbers = [3, 8, 5]`
+   - Dictionary example: `prices = {"apple": 2.5, "pear": 3.0}`
+5. **What does `if __name__ == "__main__":` do? Why does a test file need it?**
+   - `__name__` is `"__main__"` only when I run the file directly. When another file imports it, the code under the `if` does not run.
+   - The test file does `from plates import is_valid`. Without the guard, Python would read and run `plates.py` top to bottom, meaning `main()` would also run, and the program would wait for input during the test. (with help)
+6. **What is the difference between an `assert` line in `main()` and a pytest test? What does `pytest.raises(ValueError)` check?**
+   - In `main()`, an `assert` stops the file at the first failure, so I only see one error at a time. With pytest, I see a full report of all passing and failing tests together.
+   - In my test `test_largest_empty_list_raises`, `pytest.raises(ValueError)` checks that `largest([])` raises a `ValueError`. If it does not raise, the test fails.
+
+**AI used:** no AI, hints from Claude
+
+---
+
+## 2026-11-11 — Lesson 03, report
 
 ### 1. What `plates.py` does
 This program checks if a license plate is valid, and prints `Valid` or `Invalid`.
@@ -254,16 +289,17 @@ This program checks if a license plate is valid, and prints `Valid` or `Invalid`
 - For 1 and 3 the check is false, so nothing is added.
 - `return result`: give back the final list `[2, 4]` after the loop finishes.
 
-### 3. Report
-**Hardest part: `get_price`.** I used a `for` loop that replaced the `item` I was looking for with each key in the dictionary. So the function returned the wrong price, and the `kiwi` check did not give `None`. I tried many versions. It worked after I saw an example: check `if item not in prices` first, then `return prices[item]`, with no loop. (with help)
+### 3. Hardest part: `get_price`
+I used a `for` loop that replaced the `item` I was looking for with each key in the dictionary. So the function returned the wrong price, and the `kiwi` check did not give `None`. I tried many versions. It worked after I saw an example: check `if item not in prices` first, then `return prices[item]`, with no loop. (with help)
 
-**What I built in Lesson 03.**
+### 4. What I built in Lesson 03
 - I used `try`/`except` in `safe_int`, `safe_divide` and `first_item` to handle errors without crashing.
 - I wrote list functions (`sum_list`, `evens`, `count_above`, `largest`) and raised `ValueError` for an empty list.
 - I wrote dictionary functions (`get_price`, `cart_total`, `cheapest`).
 - I wrote 21 pytest tests, including `pytest.raises`, and I broke one test on purpose to read the report.
 - I wrote `average_scores.py`, which asks for 3 valid scores and prints the average.
-- I added a `if __name__ == "__main__":` guard to `plates.py`, so tests can import it.
+- I added an `if __name__ == "__main__":` guard to `plates.py`, so tests can import it.
 - I updated the README with how to run the tests. (with help)
 
-**AI used:** No AI. Hints from Claude, plus a worked example for `get_price` and for the shape of `main` in `average_scores.py`.
+### 5. AI use
+No AI. Hints from Claude, plus a worked example for `get_price` and for the shape of `main` in `average_scores.py`.

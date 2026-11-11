@@ -235,3 +235,35 @@ This week I learned that a function can give a value back with `return`. `print(
         - In my test `test_largest_empty_list_raises`, `pytest.raises(ValueError)` checks that `largest([])` raises a ValueError. If it does not raise, the test fails.
 
     - no AI, hints from Claude
+
+## 2026-11-11 — lesson03
+
+### 1. What `plates.py` does
+This program checks if a license plate is valid, and prints `Valid` or `Invalid`.
+- It makes sure the plate has between 2 and 6 characters.
+- It must start with at least two letters.
+- It may contain only letters and numbers (no punctuation or spaces).
+- If there are numbers, they must go at the very end.
+- The first number cannot be a zero.
+
+### 2. `evens([1, 2, 3, 4])` line by line
+- `result = []`: start with an empty list.
+- `for n in [1, 2, 3, 4]`: look at each number one by one.
+- `if n % 2 == 0`: check if the number is even.
+- `result.append(n)`: add 2 and 4 to the list, because their check is true.
+- For 1 and 3 the check is false, so nothing is added.
+- `return result`: give back the final list `[2, 4]` after the loop finishes.
+
+### 3. Report
+**Hardest part: `get_price`.** I used a `for` loop that replaced the `item` I was looking for with each key in the dictionary. So the function returned the wrong price, and the `kiwi` check did not give `None`. I tried many versions. It worked after I saw an example: check `if item not in prices` first, then `return prices[item]`, with no loop. (with help)
+
+**What I built in Lesson 03.**
+- I used `try`/`except` in `safe_int`, `safe_divide` and `first_item` to handle errors without crashing.
+- I wrote list functions (`sum_list`, `evens`, `count_above`, `largest`) and raised `ValueError` for an empty list.
+- I wrote dictionary functions (`get_price`, `cart_total`, `cheapest`).
+- I wrote 21 pytest tests, including `pytest.raises`, and I broke one test on purpose to read the report.
+- I wrote `average_scores.py`, which asks for 3 valid scores and prints the average.
+- I added a `if __name__ == "__main__":` guard to `plates.py`, so tests can import it.
+- I updated the README with how to run the tests. (with help)
+
+**AI used:** No AI. Hints from Claude, plus a worked example for `get_price` and for the shape of `main` in `average_scores.py`.

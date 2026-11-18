@@ -307,4 +307,21 @@ No AI. Hints from Claude, plus a worked example for `get_price` and for the shap
 ## 2026-11-11 — Problem Set 3: `cs50p/ps3/fuel.py`
 - check50: 15/15 passed
 - Hardest part: The hardest part of fuel.py was comparing percentages as text. My first version checked things like `"100%" < "99%"`, so it gave the wrong output because strings compare alphabetically. I fixed it by changing the calculation to a number and comparing integers instead. (with help: Claude listed the bugs, and I fixed them)
-- AI used: no, hints from Claude 
+- AI used: no, hints from Claude.
+
+## 2026-11-13 — Problem Set 3: `cs50p/ps3/taqueria.py`
+- check50: 7/7 passed
+- Hardest part: My first version printed the total only once, after `Ctrl-D`, but the problem wants the running total after each item. I also wrote `total = total(price_list)`, which crashed because the variable had the same name as the function. I fixed it by keeping one running `total` and printing it inside the loop. (with help: Claude listed the bugs, and I fixed them)
+- AI used: no, hints from Claude
+
+## 2026-11-15 — Problem Set 3: `cs50p/ps3/grocery.py`
+- check50: 6/6 passed
+- Hardest part: I renamed the loop variable from `item` to `name`, but I forgot to change the `print` line. So the program printed the same item twice. I fixed it by using `name` in both places, and now I check every use of a name after I rename it. (with help: Claude pointed out the unchanged print line)
+- `.get(item, 0) + 1`: if `item` is already a key, `.get(item, 0)` returns its current count. If it is not a key yet, it returns 0, so the line adds 1 to 0 and the new item starts at 1.
+- Learned from the Python docs.
+- AI used: no, hints from Claude
+
+## 2026-11-17 — Problem Set 3: `cs50p/ps3/outdated.py`
+- check50: 11/11 passed
+- Hardest part: The format `September 8, 1636` kept asking again, because I wrote `month_number` but never called it. Also, `split(" ")` leaves the comma on the day (`"8,"`), so `int("8,")` fails. The month-name branch needed its own steps: look up the month with `month_number`, check the comma, and remove it before `int(...)`. (with help)
+- AI used: yes. Claude gave the month-name branch and the table; I typed it and tested it.

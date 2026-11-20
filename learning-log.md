@@ -325,3 +325,13 @@ No AI. Hints from Claude, plus a worked example for `get_price` and for the shap
 - check50: 11/11 passed
 - Hardest part: The format `September 8, 1636` kept asking again, because I wrote `month_number` but never called it. Also, `split(" ")` leaves the comma on the day (`"8,"`), so `int("8,")` fails. The month-name branch needed its own steps: look up the month with `month_number`, check the comma, and remove it before `int(...)`. (with help)
 - AI used: yes. Claude gave the month-name branch and the table; I typed it and tested it.
+
+## 2026-11-20 — `cs50p/ps2/plates.py`
+- Problem: the plate "AAA22A" must be invalid, because a letter comes after the numbers. My code did not reject it.
+- Cause: the inner loop did not check every character after the first digit.
+- Fix: I changed the inner loop to `range(i, len(s))`. Here `i` is the index of the first digit. So the loop checks from the first digit to the end of the plate. If any character in that part is not a digit, the plate is invalid.
+- Test (run 20 Nov): "AAA22A" → Invalid. "AAA222" → Valid.
+- What I learned: numbers are only allowed at the end, so I must test edge cases and not only normal plates.
+- AI used: yes. Claude helped with the wording of this entry. The idea for `range(i, len(s))` was mine.
+
+

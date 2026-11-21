@@ -354,3 +354,8 @@ No AI. Hints from Claude, plus a worked example for `get_price` and for the shap
 5. I learned that an f-string can add leading zeros, for example `{month:02}`.
 
 - AI used: yes. Claude helped me write this entry on 21 Nov. (For `outdated`, Claude also gave the month-name branch, as I logged on 17 Nov.)
+
+## 2026-11-21 — Lesson 04 Task 1
+1. I ran `git switch -c more-plates-tests`. It created new branch and move to that branch.
+2. I added 5 tests in `cs50p/ps2/test_plates.py` and made a commit. This commit is on the branch `more-plates-tests`.
+3. On `main` I saw 7 tests. On the branch I saw 12 tests. The 5 new tests were not on `main` because commit lives on the `more-plates-tests` branch.

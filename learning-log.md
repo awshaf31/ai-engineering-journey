@@ -334,4 +334,23 @@ No AI. Hints from Claude, plus a worked example for `get_price` and for the shap
 - What I learned: numbers are only allowed at the end, so I must test edge cases and not only normal plates.
 - AI used: yes. Claude helped with the wording of this entry. The idea for `range(i, len(s))` was mine.
 
+## 2026-11-21 — Lesson 04 Task 0
 
+### The `for j` loop in plates.py
+- I rewrote the loop on 20 Nov. I retyped my own first version and changed the range to `range(i, len(s))`.
+- I tested "AAA22A" → Invalid and "AAA222" → Valid.
+
+### Hard thing in Problem Set 3: outdated
+- The problem was: the program ran, but the output was wrong.
+- I saw: `1636-9-8` instead of `1636-09-08`.
+- The cause was: I wrote `{month}` and `{day}`, so the numbers had no leading zero.
+- I fixed it by: using `{month:02}` and `{day:02}` in the f-string.
+
+### PS3 in five sentences
+1. `fuel` reads a fraction like 3/4 and prints a percent, or E for empty and F for full.
+2. `taqueria` uses a menu dictionary and prints the running total as the user adds items.
+3. `grocery` counts each item in a dictionary and prints the counts in alphabetical order.
+4. `outdated` reads a date in two formats and prints it as YYYY-MM-DD.
+5. I learned that an f-string can add leading zeros, for example `{month:02}`.
+
+- AI used: yes. Claude helped me write this entry on 21 Nov. (For `outdated`, Claude also gave the month-name branch, as I logged on 17 Nov.)

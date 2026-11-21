@@ -361,3 +361,9 @@ No AI. Hints from Claude, plus a worked example for `get_price` and for the shap
 3. On `main` I saw 7 tests. On the branch I saw 12 tests. The 5 new tests were not on `main` because commit lives on the `more-plates-tests` branch.
 4. `git merge more-plates-tests` brings the branch work into the branch we are on.
 5. I got a merge commit because `main` had a new commit `Add Lesson 04 task 1 notes` and the branch had a new commit `Add plates cases from check50`. Both lines moved, so Git made a merge commit. Git would do a fast-forward only if `main` had no new commits since the branch started.
+
+## 2026-11-21 — Lesson 04 Task 3 
+- `lesson04/greet_args.py`
+- With the quotes, Python sees one argument, so it prints Hello, Awshaf Ahmath.
+- echo $? shows 1, the exit code for an error.
+- AI used: no.

@@ -367,3 +367,33 @@ No AI. Hints from Claude, plus a worked example for `get_price` and for the shap
 - With the quotes, Python sees one argument, so it prints Hello, Awshaf Ahmath.
 - echo $? shows 1, the exit code for an error.
 - AI used: no.
+
+### Knowledge check
+1. What is the difference between a module, a library and a package? Give one example of each from this lesson.
+   - Module is single python file we can `import`.
+      - Eg: `import random` , `import statistics`
+   - Library is a group of modules for one job
+      - Eg: `random`
+   - Package is library you install from the internet with `pip`.
+      - Eg: `requests`, `cowsay`, `pytest`
+2. What is `sys.argv[0]`? What happens if you read `sys.argv[1]` when the user typed nothing? What does `sys.exit("message")` do?
+   - `sys.argv[0]`: this is the file name.
+   - `sys.argv[1]` when the user typed nothing python raises `IndexError`.
+   - `sys.exit("message")`: stop the program and print message as an error.
+3. What does `requests.get(url, timeout=10)` do? Why must you set a timeout?
+   - It sends a GET request to the URL and stops waiting after 10 seconds.
+   - Without it, the program can freeze and wait forever if the server never replies.
+4. What do the status codes `200` and `404` mean? What does `raise_for_status()` do? Why catch `requests.RequestException` and not only `HTTPError`?
+   - 200 means the request succeeded and 404 means page or user not found.
+   - `raise_for_status()` turns `4xx` or `5xx` status codes into an error that `except` can catch.
+   - `HTTPError` only catches bad status codes, while `RequestException` also catches no internet, bad networks, and timeouts.
+5. Why did you split `fetch_user` and `parse_user`? Why do the tests not call the network?
+   - `fetch_user` gets data from the internet(or None), while `parse_user` just reads a dictionary so we can test it with fake data.
+   - Tests skip the network so they work with Wi-Fi off and don't break from Github down or rate limits.
+6. In Git, what is a branch? When does a merge make a merge commit, and when does Git do a fast-forward? What does `git log --oneline --graph` show?
+   - A branch is separate line of work where we can make changes without touching `main`.
+   - Git makes a merge commit when both `main` and the branch have new commits, and does a fast-forward when `main` has no new commits.
+   - `git log --oneline --graph` shows the commit history as a tree.`*` is a commit and the lines show branches splitting and merging.
+
+
+

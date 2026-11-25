@@ -17,5 +17,7 @@ def test_shorten_numbers_and_space():
 def test_shorten_no_vowels():
     assert shorten("myth") == "myth"
 
+def test_shorten_keeps_punctuation():
+    assert shorten("What's your name?") == "Wht's yr nm?"
 
 

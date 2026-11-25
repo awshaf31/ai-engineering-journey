@@ -395,5 +395,13 @@ No AI. Hints from Claude, plus a worked example for `get_price` and for the shap
    - Git makes a merge commit when both `main` and the branch have new commits, and does a fast-forward when `main` has no new commits.
    - `git log --oneline --graph` shows the commit history as a tree.`*` is a commit and the lines show branches splitting and merging.
 
+## 2026-11-25 — PS5 twttr and bank
+- What I did: refactored `twttr.py` into `shorten` and `bank.py` into `value`, then wrote `test_twttr.py` (6 tests) and `test_bank.py` (5 tests). check50 is green for both.
+- Bug I fixed: `shorten` returned too early, inside the loop. I fixed it by building a new string and returning it after the loop. Then I removed `.lower()` from the return line, because it changed the capital letters that should stay.
+- What check50 taught me: my tests had no punctuation check, so a buggy version that removes punctuation passed. I added a test for it.
+- `bank`: the rule is "starts with", not exact words. I used `.startswith()` and I check `hello` before `h` because every string starting with "hello" also starts with "h", so checking "h" first would return `20` instead of `0`.
+- Mistake in my tests: two tests had the same name, so pytest ran only one.
+- - AI used: yes. Hints on the `shorten` bug, naming and docstring, test ideas, and the `startswith` idea with a code skeleton with blanks for `value`. I typed all the code. Claude wrote the final wording of the "Bug I fixed" and "What check50 taught me" lines, and I checked they are true.
+
 
 
